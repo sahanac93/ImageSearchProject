@@ -1,0 +1,50 @@
+﻿<Window x:Class="ImageSearch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assessment.ImageSearch"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Enter Image search texts separated by commas..." Margin="5,5,5,0" Padding="2" HorizontalAlignment="Left"/>
+        <TextBox x:Name="SearchBar" Text="{Binding Path=SearchText, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="0" Margin="5,5,0,0" VerticalAlignment="Center" Width="Auto"/>
+        <Button x:Name="Load" Grid.Row="1" Grid.Column="1" Content="Load Images" Width="Auto" Margin="5,5,0,0" HorizontalAlignment="Left" Command="{Binding LoadCommand}"/>
+        <ProgressBar Grid.Row="2" Grid.Column="0" Name="ProgressBar" HorizontalAlignment="Left" Margin="5,3,5,3" Height="3" Width="1500" IsIndeterminate="{Binding InProgress, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"  Margin="5">
+            <WrapPanel Name="ImagesWrapPanel" MaxWidth="1500" Visibility="Visible" HorizontalAlignment="Left">
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[0].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[1].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[2].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[3].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[4].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[5].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[6].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[7].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[8].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[9].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}"  Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[10].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[11].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[12].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[13].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[14].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[15].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[16].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[17].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[18].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+                <Image Margin="3" Source="{Binding Path=ImagesPathList[19].ImageSourcePath , UpdateSourceTrigger=PropertyChanged}" Height="300" Width="300" Stretch="Uniform"/>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
